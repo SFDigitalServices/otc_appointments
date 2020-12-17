@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <div>
+            Dear ${name},<br>
+            Thank you for your interest in joining the OTC wait list. We are able to offer you ${newDate} and ${newTime} as your new appointment slot.
+            To accept, please click the accept link. This will cancel your ${oldDate} ${oldTime} appointment.
+        </div>
+        <div>
+            <a href="https://${site}/response?action=Accept&id=${id}">Accept</a>
+        </div>
+        <div>
+            <a href="https://${site}/response?action=Decline&id=${id}">Decline</a>
+        </div>
+    </body>
+</html>

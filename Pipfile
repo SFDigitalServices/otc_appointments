@@ -4,6 +4,10 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+pytest = "*"
+pytest-cov = "*"
+pre-commit = "*"
+pylint = "*"
 
 [packages]
 falcon = "*"
@@ -11,10 +15,9 @@ gunicorn = "*"
 coveralls = "*"
 pyjsend = "*"
 sentry-sdk = "*"
-pytest = "*"
-pytest-cov = "*"
-pre-commit = "*"
-pylint = "*"
+mako = "*"
+requests = "*"
+sendgrid = "*"
 
 [requires]
 python_version = "3.7"
