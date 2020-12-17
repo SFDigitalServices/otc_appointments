@@ -51,7 +51,6 @@ class EmailOffer():
         resp.body = response.body
         resp.status_code = falcon.HTTP_200
 
-@falcon.before(validate_access)
 class OfferResponse():
     """record applicant response to the offer"""
     def on_get(self, _req, resp):
