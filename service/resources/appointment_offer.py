@@ -71,6 +71,10 @@ class OfferResponse():
                 json=data
             )
             response.raise_for_status()
+
+            template = Template(filename='templates/email_response.html')
+            resp.body = template.render()
+            resp.status = falcon.HTTP_200
         except requests.HTTPError as err:
             print("HTTPError:")
             print("{0} {1}".format(err.response.status_code, err.response.text))
