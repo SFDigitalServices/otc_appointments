@@ -17,6 +17,7 @@ SPREADSHEET_KEY = os.environ.get("SPREADSHEET_KEY")
 SPREADSHEETS_ID_COL = "A"
 SPREADSHEETS_RESPONSE_COL = "AL"
 SITE_DOMAIN = os.environ.get("SITE_DOMAIN")
+SENDGRID_API_KEY = os.environ.get('SENDGRID_API_KEY')
 
 @falcon.before(validate_access)
 class EmailOffer():
@@ -30,7 +31,7 @@ class EmailOffer():
         request_params_json = json.loads(request_body)
         template = Template(filename="templates/appointment_offer.html")
 
-        sg = sendgrid.SendGridAPIClient(api_key=os.environ.get('SENDGRID_API_KEY')) #pylint: disable=invalid-name
+        sg = sendgrid.SendGridAPIClient(api_key=SENDGRID_API_KEY) #pylint: disable=invalid-name
         from_email = Email(FROM_EMAIL)
         to_email = To(request_params_json.get("to"))
         content = Content("text/html", template.render(
