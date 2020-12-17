@@ -72,6 +72,7 @@ class OfferResponse():
             )
             response.raise_for_status()
 
+            resp.content_type = falcon.MEDIA_HTML
             template = Template(filename='templates/email_response.html')
             resp.body = template.render()
             resp.status = falcon.HTTP_200
